@@ -13,7 +13,7 @@ class BookRental {
             System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
             System.out.println("*************************");
             for (int i = 0; i < books.length; i++) {
-                System.out.println((i + 1) + ". " + books[i].getTitle() + " by " + books[i].getAuthor() + books[i].getCopies() + " available");
+                System.out.println((i + 1) + ". " + books[i].getTitle() + " by " + books[i].getAuthor() + " " + books[i].getCopies() + " available");
             }
             System.out.println("*************************");
             System.out.print("Choose a number to rent your favorite book: ");
