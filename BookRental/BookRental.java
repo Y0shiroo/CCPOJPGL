@@ -13,7 +13,7 @@ class BookRental {
             System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
             System.out.println("*************************");
             for (int i = 0; i < books.length; i++) {
-                System.out.println((i + 1) + ". " + books[i].getTitle() + " by " + books[i].getAuthor() + books[i].getNumCopies() + " available");
+                System.out.println((i + 1) + ". " + books[i].getTitle() + " by " + books[i].getAuthor() + books[i].getCopies() + " available");
             }
             System.out.println("*************************");
             System.out.print("Choose a number to rent your favorite book: ");
@@ -29,7 +29,7 @@ class BookRental {
             }
             book.borrow();
             System.out.println("You have successfully borrowed " + book.getTitle() + " by " + book.getAuthor() + ".");
-            System.out.println("There are now " + book.getNumCopies() + " copies available.");
+            System.out.println("There are now " + book.getCopies() + " copies available.");
             if (allCopiesBorrowed()) {
                 System.out.println("All books have been borrowed. Exiting program.");
                 break;
