@@ -83,21 +83,21 @@ public class LibrarianLogin {
 				String username = txtUsername.getText();
 				String password = txtPassword.getText();
 				
-				if (username.contains("Librarian_01")&& password.contains("LibrarianOne")) {
+				if (username.contains("Librarian_01")&& password.contains("LibOne")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
 					LibrarianBooks lb = new LibrarianBooks();
 					lb.Booksframe.setVisible(true);
 					LibrarianloginFrame.dispose();
-				} else if (username.contains("Librarian_02")&& password.contains("LibrarianTwo")) {
+				} else if (username.contains("Librarian_02")&& password.contains("LibTwo")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
 					LibrarianBooks lb = new LibrarianBooks();
 					lb.Booksframe.setVisible(true);
 					LibrarianloginFrame.dispose();
-				} else if (username.contains("Librarian_03")&& password.contains("LibrarianThree")) {
+				} else if (username.contains("Librarian_03")&& password.contains("LibrThree")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
