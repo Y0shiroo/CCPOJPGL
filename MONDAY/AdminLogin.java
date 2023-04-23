@@ -1,3 +1,4 @@
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,7 +9,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-public class AdminLogin {
+public class 	AdminLogin {
 
     JFrame AdminloginFrame;
 	private JTextField txtUsername;
@@ -75,14 +76,23 @@ public class AdminLogin {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					WelcomeAdmin wa = new WelcomeAdmin();
+					wa.welcomeframe.setVisible(true);
+					AdminloginFrame.dispose();
 				} else if (username.contains("Admin_02")&& password.contains("AdminTwo")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					WelcomeAdmin wa = new WelcomeAdmin();
+					wa.welcomeframe.setVisible(true);
+					AdminloginFrame.dispose();
 				} else if (username.contains("Admin_03")&& password.contains("AdminThree")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					WelcomeAdmin wa = new WelcomeAdmin();
+					wa.welcomeframe.setVisible(true);
+					AdminloginFrame.dispose();
 				} else {
 					JOptionPane.showMessageDialog(null,"Invalid Login Details", "Login Error", JOptionPane.ERROR_MESSAGE);
 				}
