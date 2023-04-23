@@ -1,7 +1,9 @@
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -85,14 +87,23 @@ public class LibrarianLogin {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					LibrarianBooks lb = new LibrarianBooks();
+					lb.Booksframe.setVisible(true);
+					LibrarianloginFrame.dispose();
 				} else if (username.contains("Librarian_02")&& password.contains("LibrarianTwo")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					LibrarianBooks lb = new LibrarianBooks();
+					lb.Booksframe.setVisible(true);
+					LibrarianloginFrame.dispose();
 				} else if (username.contains("Librarian_03")&& password.contains("LibrarianThree")) {
 					txtUsername.setText(null);
 					txtPassword.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					LibrarianBooks lb = new LibrarianBooks();
+					lb.Booksframe.setVisible(true);
+					LibrarianloginFrame.dispose();
 				} else {
 					JOptionPane.showMessageDialog(null,"Invalid Login Details", "Login Error", JOptionPane.ERROR_MESSAGE);
 				}
