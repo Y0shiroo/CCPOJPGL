@@ -114,7 +114,7 @@ public class LibrarianBooks {
 		lblAuthors.setBounds(288, 102, 232, 56);
 		Booksframe.getContentPane().add(lblAuthors);
 		
-		JLabel lblNumOfCompies = new JLabel("NUM. OF COMPIES :");
+		JLabel lblNumOfCopies = new JLabel("NUM. OF COPIES :");
 		lblNumOfCompies.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNumOfCompies.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		lblNumOfCompies.setBounds(539, 102, 232, 56);
