@@ -1,0 +1,11 @@
+public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == borrowButton) {
+            int bookNum = Integer.parseInt(textField.getText());
+            if (bookNum >= 0 && bookNum < bookList.length && bookList[bookNum] > 0) {
+                bookList[bookNum]--;
+                JOptionPane.showMessageDialog(frame, "Book borrowed successfully!");
+            } else {
+                JOptionPane.showMessageDialog(frame, "Invalid book number or book not available.");
+            }
+        }
+    }
