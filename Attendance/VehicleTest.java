@@ -27,9 +27,9 @@ Fandango_Yacht ych = new Fandango_Yacht();
 //FandangoYacht
 System.out.println("");
 System.out.println("Fandango Yacht: ");
-System.out.println(ych.PlaneColor);
-System.out.println(ych.PlanePrice);
-System.out.println(ych.PlaneSpeed);
+System.out.println(ych.YachtColor);
+System.out.println(ych.YachtPrice);
+System.out.println(ych.YachtSpeed);
 System.out.println(ych.MainSailColor);
 ych.Float();
 ych.Stop();
