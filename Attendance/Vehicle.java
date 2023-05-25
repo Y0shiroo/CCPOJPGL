@@ -2,15 +2,15 @@
 class Vehicle {
 String PlaneSpeed = "900 km/h";
 String PlaneColor = "Black";
-float PlanePrice  = 120000000.00f;
+String PlanePrice  = "120,000,000 PHP";
 
 String CarSpeed = "170 km/h";
 String CarColor = "Light Blue";
-float CarPrice  = 2797275.00f;
+String CarPrice  = "2,797,275 PHP";
 
 String YachtSpeed = "50 km/h";
 String YachtColor = "White";
-float YachtPrice  = 1055000.00f;
+String YachtPrice  = "1,055,000 PHP";
 
 void Stop () {
  System.out.println("The vehicle is stopping");	
