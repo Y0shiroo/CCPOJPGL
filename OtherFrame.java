@@ -48,6 +48,11 @@ public class OtherFrame extends JFrame {
         otherTable = new JTable(model);
         scrollPane.setViewportView(otherTable);
         otherTable.setModel(model);
+        otherTable.setEnabled(false);
+        otherTable.setFocusable(false);
+        otherTable.setRowSelectionAllowed(false);
+        otherTable.getTableHeader().setReorderingAllowed(false);
+        otherTable.getTableHeader().setResizingAllowed(false);
         Object[] column = { "Position Code", "Job Title", "Responsibilities", "Salary" };
         model.setColumnIdentifiers(column);
         final Object[] row = new Object[4];
