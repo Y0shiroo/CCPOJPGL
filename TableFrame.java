@@ -124,11 +124,14 @@ public class TableFrame {
         });
         Vartable.setBackground(new Color(165, 216, 220));
         model = new DefaultTableModel();
+        Vartable.getTableHeader().setReorderingAllowed(false);
+        Vartable.getTableHeader().setResizingAllowed(false);
         Object[] column = {"Position Code", "Job Title", "Responsibilities", "Salary"};
         final Object[] row = new Object[4];
         model.setColumnIdentifiers(column);
         Vartable.setModel(model);
         scrollPane.setViewportView(Vartable);
+        
 
         JButton btnAdd = new JButton("ADD");
         btnAdd.addActionListener(new ActionListener() {
