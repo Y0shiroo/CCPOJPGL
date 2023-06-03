@@ -95,10 +95,10 @@ public class Skills extends JFrame {
 		lblCommunication.setBounds(26, 382, 150, 25);
 		Skillspanel.add(lblCommunication);
 		
-		JLabel lblNewLabel = new JLabel("- Has prior knowledge of Java, HTML, and Python language.");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 10));
-		lblNewLabel.setBounds(26, 42, 385, 50);
-		Skillspanel.add(lblNewLabel);
+		JLabel lblPriorKnowledge = new JLabel("- Has prior knowledge of Java, HTML, and Python language.");
+		lblPriorKnowledge.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+		lblPriorKnowledge.setBounds(26, 42, 385, 50);
+		Skillspanel.add(lblPriorKnowledge);
 		
 		JLabel lblKnowledgeOf = new JLabel("- Knowledge of troubleshooting operating systems.");
 		lblKnowledgeOf.setFont(new Font("Times New Roman", Font.PLAIN, 10));
