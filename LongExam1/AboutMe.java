@@ -116,7 +116,7 @@ public class AboutMe extends JFrame {
 		});
 		btnWhoAmI.setBounds(262, 28, 125, 40);
 		AboutMe.add(btnWhoAmI);
-	//BACKGROUND LAYOUT	
+	//BACKGROUND	
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\P.INFO_(2)[1].png"));
 		lblBackground.setBounds(0, 0, 700, 700);
