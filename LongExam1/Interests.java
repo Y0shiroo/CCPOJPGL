@@ -46,7 +46,7 @@ public class Interests extends JFrame {
 
 		setContentPane(Interests);
 		Interests.setLayout(null);
-		
+	// BACK TO PAGE ONE BUTTON
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnBack.addActionListener(new ActionListener() {
@@ -58,7 +58,7 @@ public class Interests extends JFrame {
 		});
 		btnBack.setBounds(536, 21, 100, 33);
 		Interests.add(btnBack);
-				
+	//PANEL WAS SET TO FALSE FOR THE SHOW BUTTON			
 		JPanel Interestspanel = new JPanel();
 		Interestspanel.setBackground(new Color(199, 199, 199));
 		Interestspanel.setBorder(null);
@@ -68,19 +68,19 @@ public class Interests extends JFrame {
 		Interestspanel.setVisible(false);
 		
 		JLabel lblF_Ficon = new JLabel("");
-		lblF_Ficon.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\2[1].png"));
+		lblF_Ficon.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\2[1].png"));
 		lblF_Ficon.setHorizontalAlignment(SwingConstants.CENTER);
 		lblF_Ficon.setBounds(53, 61, 100, 100);
 		Interestspanel.add(lblF_Ficon);
 		
 		JLabel lblBlondeicon = new JLabel("");
-		lblBlondeicon.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\3[1].png"));
+		lblBlondeicon.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\3[1].png"));
 		lblBlondeicon.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBlondeicon.setBounds(239, 61, 100, 100);
 		Interestspanel.add(lblBlondeicon);
 		
 		JLabel lblValorant = new JLabel("");
-		lblValorant.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\4[1].png"));
+		lblValorant.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\4[1].png"));
 		lblValorant.setHorizontalAlignment(SwingConstants.CENTER);
 		lblValorant.setBounds(148, 222, 100, 100);
 		Interestspanel.add(lblValorant);
@@ -99,7 +99,7 @@ public class Interests extends JFrame {
 		lblGames.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGames.setBounds(158, 333, 75, 30);
 		Interestspanel.add(lblGames);
-		
+	//SHOW BUTTON AKA WHAT ARE YOU INTERESTED IN BUTTON
 		JButton btnWhatAreYou = new JButton("WHAT ARE YOU INTERESTED IN?");
 		btnWhatAreYou.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -109,10 +109,10 @@ public class Interests extends JFrame {
 		btnWhatAreYou.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		btnWhatAreYou.setBounds(310, 21, 199, 33);
 		Interests.add(btnWhatAreYou);
-		
+	//BACKGROUND	
 		JLabel lblBackgroundInt = new JLabel("");
 		lblBackgroundInt.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBackgroundInt.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\INTERESTSNOTEXT[1].png"));
+		lblBackgroundInt.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\INTERESTSNOTEXT[1].png"));
 		lblBackgroundInt.setBounds(0, 0, 700, 700);
 		Interests.add(lblBackgroundInt);
 	}
