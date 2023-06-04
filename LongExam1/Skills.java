@@ -1,4 +1,4 @@
-  package L1;
+package L1;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -45,7 +45,7 @@ public class Skills extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+	// BACK TO PAGE ONE BUTTON
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnBack.addActionListener(new ActionListener() {
@@ -57,7 +57,7 @@ public class Skills extends JFrame {
 		});
 		btnBack.setBounds(498, 10, 125, 40);
 		contentPane.add(btnBack);
-		
+	//PANEL WAS SET TO FALSE FOR THE SHOW BUTTON
 		JPanel Skillspanel = new JPanel();
 		Skillspanel.setBackground(new Color(192, 192, 192));
 		Skillspanel.setBounds(41, 148, 521, 457);
@@ -124,7 +124,7 @@ public class Skills extends JFrame {
 		lblCanEffectively.setFont(new Font("Times New Roman", Font.PLAIN, 9));
 		lblCanEffectively.setBounds(26, 401, 485, 56);
 		Skillspanel.add(lblCanEffectively);
-		
+	//SHOW BUTTON AKA WHAT ARE YOUR SKILLS BUTTON	
 		JButton btnShowSkills = new JButton("WHAT ARE YOUR SKILLS?");
 		btnShowSkills.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnShowSkills.addActionListener(new ActionListener() {
@@ -135,11 +135,11 @@ public class Skills extends JFrame {
 		btnShowSkills.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnShowSkills.setBounds(286, 10, 202, 40);
 		contentPane.add(btnShowSkills);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\SKILLSET_(1)[1].png"));
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(0, 0, 700, 700);
-		contentPane.add(lblNewLabel_3);
+	//BACKGROUND	
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\SKILLSET_(1)[1].png"));
+		lblBackground.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBackground.setBounds(0, 0, 700, 700);
+		contentPane.add(lblBackground);
 	}
 }
