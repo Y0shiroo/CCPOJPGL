@@ -49,7 +49,7 @@ public class AboutMe extends JFrame {
 
 		setContentPane(AboutMe);
 		AboutMe.setLayout(null);
-		
+	// BACK TO PAGE ONE BUTTON
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnBack.addActionListener(new ActionListener() {
@@ -71,7 +71,7 @@ public class AboutMe extends JFrame {
 		lbl1x1.setBounds(97, 215, 165, 165);
 		lbl1x1.setVisible(false);
 		AboutMe.add(lbl1x1);
-		
+	//PANEL WAS SET TO FALSE FOR THE SHOW BUTTON	
 		JPanel InfoPanel = new JPanel();
 		InfoPanel.setBackground(new Color(201, 201, 201));
 		InfoPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -105,7 +105,7 @@ public class AboutMe extends JFrame {
 		lblOccupation.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		lblOccupation.setBounds(39, 267, 160, 55);
 		InfoPanel.add(lblOccupation);
-		
+	//SHOW BUTTON AKA WHO AM I BUTTON	
 		JButton btnWhoAmI = new JButton("WHO AM I?");
 		btnWhoAmI.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnWhoAmI.addActionListener(new ActionListener() {
@@ -116,9 +116,9 @@ public class AboutMe extends JFrame {
 		});
 		btnWhoAmI.setBounds(262, 28, 125, 40);
 		AboutMe.add(btnWhoAmI);
-		
+	//BACKGROUND LAYOUT	
 		JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\P.INFO_(2)[1].png"));
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\P.INFO_(2)[1].png"));
 		lblBackground.setBounds(0, 0, 700, 700);
 		lblBackground.setVisible(true);
 		AboutMe.add(lblBackground);
