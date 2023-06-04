@@ -46,7 +46,7 @@ public class Educ extends JFrame {
 
 		setContentPane(Educ);
 		Educ.setLayout(null);
-		
+	// BACK TO PAGE ONE BUTTON
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnBack.addActionListener(new ActionListener() {
@@ -58,7 +58,7 @@ public class Educ extends JFrame {
 		});
 		btnBack.setBounds(492, 10, 96, 45);
 		Educ.add(btnBack);
-		
+	//PANEL WAS SET TO FALSE FOR THE SHOW BUTTON
 		JPanel Educpanel = new JPanel();
 		Educpanel.setBackground(new Color(201, 201, 201));
 		Educpanel.setBounds(146, 228, 350, 350);
@@ -67,17 +67,17 @@ public class Educ extends JFrame {
 		Educpanel.setVisible(false);
 		
 		JLabel lblTSBS = new JLabel("");
-		lblTSBS.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\5[1].png"));
+		lblTSBS.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\5[1].png"));
 		lblTSBS.setBounds(43, 28, 100, 100);
 		Educpanel.add(lblTSBS);
 		
 		JLabel lblPCC = new JLabel("");
-		lblPCC.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\6[1].png"));
+		lblPCC.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\6[1].png"));
 		lblPCC.setBounds(226, 127, 100, 100);
 		Educpanel.add(lblPCC);
 		
 		JLabel lblNU = new JLabel("");
-		lblNU.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\7[1].png"));
+		lblNU.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\7[1].png"));
 		lblNU.setBounds(43, 227, 100, 100);
 		Educpanel.add(lblNU);
 		
@@ -116,7 +116,7 @@ public class Educ extends JFrame {
 		lblNUMDates.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		lblNUMDates.setBounds(168, 272, 172, 55);
 		Educpanel.add(lblNUMDates);
-		
+	//SHOW BUTTON AKA WHERE DID YOU STUDY BUTTON
 		JButton btnShowStudy = new JButton("WHERE DID YOU STUDY?");
 		btnShowStudy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -126,7 +126,7 @@ public class Educ extends JFrame {
 		btnShowStudy.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		btnShowStudy.setBounds(292, 10, 165, 45);
 		Educ.add(btnShowStudy);
-		
+	//BACKGROUND	
 		JLabel lblBackgroundEduc = new JLabel("");
 		lblBackgroundEduc.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\EDUCNOTEXT[1].png"));
 		lblBackgroundEduc.setHorizontalAlignment(SwingConstants.CENTER);
