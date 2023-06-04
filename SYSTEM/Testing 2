@@ -1,43 +1,46 @@
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
 import javax.swing.RowFilter;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import javax.swing.JOptionPane;
 
-public class SearchFrame {
+public class ApplicantProcess extends JFrame {
 
-    private JFrame frame;
-    private JTextField searchField;
-    private JTable table;
+    private JLayeredPane layeredPane;
+    private JPanel panel1;
+    private JPanel panel2;
+    private JPanel panel3;
+    private JTable App_table;
     private DefaultTableModel model;
-    private TableRowSorter<DefaultTableModel> sorter;
-    private List<String[]> originalData;
-    private ApplicantFrame applicantFrame;
-    private Executive_Dash executiveDash;
-
-    private static final String FILE_PATH = "data.txt";
+    private JTextField searchField;
+    private SearchFrame searchFrame;
+    private ExecutiveDash executiveDash;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    SearchFrame window = new SearchFrame();
-                    window.frame.setVisible(true);
+                    ApplicantProcess frame = new ApplicantProcess();
+                    frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -45,128 +48,198 @@ public class SearchFrame {
         });
     }
 
-    public SearchFrame() {
+    public ApplicantProcess() {
         initialize();
-        loadDataFromFile();
-        originalData = getDataFromModel();
-        applicantFrame = new ApplicantFrame();
-        executiveDash = new Executive_Dash();
+        searchFrame = new SearchFrame();
+        executiveDash = new ExecutiveDash();
     }
 
     private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 513, 442);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1026, 645);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(null);
 
-        JPanel panel = new JPanel();
-        panel.setBounds(0, 0, 463, 310);
-        frame.getContentPane().add(panel);
-        panel.setLayout(null);
+        layeredPane = new JLayeredPane();
+        layeredPane.setBounds(222, 123, 798, 494);
+        getContentPane().add(layeredPane);
+        layeredPane.setLayout(new CardLayout(0, 0));
 
-        JLabel lblSearch = new JLabel("Search Position Code:");
-        lblSearch.setHorizontalAlignment(SwingConstants.RIGHT);
-        lblSearch.setBounds(10, 11, 140, 14);
-        panel.add(lblSearch);
+        model = new DefaultTableModel();
+        App_table = new JTable();
+        App_table.setModel(model);
+        App_table.setEnabled(false);
+        App_table.setFocusable(false);
+        App_table.setRowSelectionAllowed(false);
+        App_table.getTableHeader().setReorderingAllowed(false);
+        App_table.getTableHeader().setResizingAllowed(false);
+        Object[] column = { "Position Code", "Job Title", "Responsibilities", "Salary" };
+        model.setColumnIdentifiers(column);
+        final Object[] row = new Object[4];
+
+        JScrollPane scrollPane = new JScrollPane(App_table);
+        scrollPane.setBounds(45, 70, 726, 404);
+
+        panel1 = new JPanel();
+        panel1.setLayout(null);
+        panel1.add(scrollPane);
+
+        layeredPane.add(panel1, "panel1");
+
+        panel2 = new JPanel();
+        panel2.setLayout(null);
+
+        JLabel lblNewLabel_1 = new JLabel("Panel2");
+        lblNewLabel_1.setBounds(378, 5, 41, 16);
+        panel2.add(lblNewLabel_1);
 
         searchField = new JTextField();
-        searchField.setBounds(160, 8, 140, 20);
-        panel.add(searchField);
+        searchField.setBounds(33, 65, 335, 46);
+        panel2.add(searchField);
         searchField.setColumns(10);
 
-        JButton btnSearch = new JButton("Search");
-        btnSearch.setBounds(310, 7, 89, 23);
-        panel.add(btnSearch);
-
-        JButton btnApply = new JButton("Apply");
-        btnApply.setBounds(177, 334, 89, 23);
-        frame.getContentPane().add(btnApply);
-
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(10, 36, 443, 248);
-        panel.add(scrollPane);
-
-        table = new JTable();
-        scrollPane.setViewportView(table);
-        model = new DefaultTableModel();
-        table.setModel(model);
-        table.setEnabled(true);
-        table.setFocusable(false);
-        table.setRowSelectionAllowed(true);
-        table.getTableHeader().setReorderingAllowed(false);
-        table.getTableHeader().setResizingAllowed(false);
-        table.setDefaultEditor(Object.class, null);
-        Object[] column = { "Position Code" };
-        model.setColumnIdentifiers(column);
-
-        sorter = new TableRowSorter<>(model);
-        table.setRowSorter(sorter);
-
-        btnSearch.addActionListener(new ActionListener() {
+        JButton btn_Search = new JButton("Search");
+        btn_Search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String searchQuery = searchField.getText().trim();
-                if (searchQuery.isEmpty()) {
-                    JOptionPane.showMessageDialog(frame, "Please enter a position code to search.", "Empty Search", JOptionPane.WARNING_MESSAGE);
-                } else {
-                    searchPositionCode(searchQuery);
-                }
+                searchPositionCode();
             }
         });
+        btn_Search.setBounds(396, 75, 117, 29);
+        panel2.add(btn_Search);
 
-        btnApply.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow == -1) {
-                    JOptionPane.showMessageDialog(frame, "Please select a position code to apply.", "No Selection", JOptionPane.WARNING_MESSAGE);
-                } else {
-                    String positionCode = (String) table.getValueAt(selectedRow, 0);
-                    applicantFrame.incrementApplicants(positionCode);
-                    applicantFrame.saveDataToFile();
-                    JOptionPane.showMessageDialog(frame, "You have successfully applied for position code: " + positionCode, "Application Submitted", JOptionPane.INFORMATION_MESSAGE);
-                    executiveDash.updateApplicants(positionCode);
-                }
-            }
-        });
-    }
+        JScrollPane scrollPane_1 = new JScrollPane();
+        scroll.scrollPane_1.setBounds(33, 135, 731, 339);
+        panel2.add(scrollPane_1);
+            // Initialize the table with data
+    model = new DefaultTableModel();
+    App_table = new JTable();
+    App_table.setModel(model);
+    App_table.setEnabled(false);
+    App_table.setFocusable(false);
+    App_table.setRowSelectionAllowed(false);
+    App_table.getTableHeader().setReorderingAllowed(false);
+    App_table.getTableHeader().setResizingAllowed(false);
+    Object[] columnNames = { "Position Code", "Job Title", "Responsibilities", "Salary" };
+    model.setColumnIdentifiers(columnNames);
+    loadData(); // Load data from file to table
 
-    private void loadDataFromFile() {
-        try {
-            File file = new File(FILE_PATH);
-            if (file.exists()) {
-                BufferedReader reader = new BufferedReader(new FileReader(file));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    String[] data = line.split(",");
-                    if (data.length > 0) {
-                        model.addRow(data);
-                    }
-                }
-                reader.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    scrollPane_1.setViewportView(App_table);
+
+    layeredPane.add(panel2, "panel2");
+
+    panel3 = new JPanel();
+    panel3.setLayout(null);
+
+    JButton btn_Apply = new JButton("Apply");
+    btn_Apply.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            applyForPosition();
         }
-    }
+    });
+    btn_Apply.setBounds(376, 75, 117, 29);
+    panel3.add(btn_Apply);
 
-    private List<String[]> getDataFromModel() {
-        List<String[]> data = new ArrayList<>();
-        for (int i = 0; i < model.getRowCount(); i++) {
-            String[] rowData = new String[model.getColumnCount()];
-            for (int j = 0; j < model.getColumnCount(); j++) {
-                rowData[j] = (String) model.getValueAt(i, j);
+    layeredPane.add(panel3, "panel3");
+
+    JButton btn_Panel1 = new JButton("Panel1");
+    btn_Panel1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            CardLayout cardLayout = (CardLayout) layeredPane.getLayout();
+            cardLayout.show(layeredPane, "panel1");
+        }
+    });
+    btn_Panel1.setBounds(6, 5, 96, 29);
+    getContentPane().add(btn_Panel1);
+
+    JButton btn_Panel2 = new JButton("Panel2");
+    btn_Panel2.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            CardLayout cardLayout = (CardLayout) layeredPane.getLayout();
+            cardLayout.show(layeredPane, "panel2");
+        }
+    });
+    btn_Panel2.setBounds(114, 5, 96, 29);
+    getContentPane().add(btn_Panel2);
+
+    JButton btn_Panel3 = new JButton("Panel3");
+    btn_Panel3.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            CardLayout cardLayout = (CardLayout) layeredPane.getLayout();
+            cardLayout.show(layeredPane, "panel3");
+        }
+    });
+    btn_Panel3.setBounds(222, 5, 96, 29);
+    getContentPane().add(btn_Panel3);
+
+    JLabel lblNewLabel = new JLabel("APPCOUNT");
+    lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    lblNewLabel.setBounds(6, 45, 96, 16);
+    getContentPane().add(lblNewLabel);
+
+    JLabel countLabel = new JLabel("0");
+    countLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    countLabel.setBounds(6, 65, 96, 16);
+    getContentPane().add(countLabel);
+    executiveDash.setCountLabel(countLabel);
+
+    JButton btnOpenExecutiveDash = new JButton("Open Executive Dash");
+    btnOpenExecutiveDash.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            executiveDash.setVisible(true);
+        }
+    });
+    btnOpenExecutiveDash.setBounds(6, 91, 200, 29);
+    getContentPane().add(btnOpenExecutiveDash);
+}
+
+private void searchPositionCode() {
+    String searchCode = searchField.getText().trim();
+    if (searchCode.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter a position code to search.", "Empty Search Field",
+                JOptionPane.WARNING_MESSAGE);
+    } else {
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        App_table.setRowSorter(sorter);
+        RowFilter<DefaultTableModel, Object> filter = RowFilter.regexFilter(searchCode, 0);
+        sorter.setRowFilter(filter);
+    }
+}
+
+private void applyForPosition() {
+    int selectedRow = App_table.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a position to apply.", "No Position Selected",
+                JOptionPane.WARNING_MESSAGE);
+    } else {
+        String positionCode = (String) App_table.getValueAt(selectedRow, 0);
+        executiveDash.incrementCount();
+        JOptionPane.showMessageDialog(this, "Successfully applied for position: " + positionCode, "Application Submitted",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+}
+
+private void loadData() {
+    try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] data = line.split(",");
+            model.addRow(data);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+public static void main(String[] args) {
+    EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            try {
+                Application window = new Application();
+                window.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            data.add(rowData);
         }
-        return data;
-    }
-
-    private void searchPositionCode(String query) {
-        RowFilter<DefaultTableModel, Object> rf = null;
-        try {
-            rf = RowFilter.regexFilter(query, 0);
-        } catch (java.util.regex.PatternSyntaxException e) {
-            return;
-        }
-        sorter.setRowFilter(rf);
-    }
+    });
+}
 }
