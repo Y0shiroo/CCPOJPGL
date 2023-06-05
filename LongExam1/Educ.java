@@ -66,18 +66,19 @@ public class Educ extends JFrame {
 		Educpanel.setLayout(null);
 		Educpanel.setVisible(false);
 		
+	//LABELS FOR PICTURES AND OTHER INFORMATION
 		JLabel lblTSBS = new JLabel("");
-		lblTSBS.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\5[1].png"));
+		lblTSBS.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\5[1].png"));
 		lblTSBS.setBounds(43, 28, 100, 100);
 		Educpanel.add(lblTSBS);
 		
 		JLabel lblPCC = new JLabel("");
-		lblPCC.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\6[1].png"));
+		lblPCC.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\6[1].png"));
 		lblPCC.setBounds(226, 127, 100, 100);
 		Educpanel.add(lblPCC);
 		
 		JLabel lblNU = new JLabel("");
-		lblNU.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\7[1].png"));
+		lblNU.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\7[1].png"));
 		lblNU.setBounds(43, 227, 100, 100);
 		Educpanel.add(lblNU);
 		
@@ -126,11 +127,12 @@ public class Educ extends JFrame {
 		btnShowStudy.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		btnShowStudy.setBounds(292, 10, 165, 45);
 		Educ.add(btnShowStudy);
-	//BACKGROUND	
-		JLabel lblBackgroundEduc = new JLabel("");
-		lblBackgroundEduc.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\EDUCNOTEXT[1].png"));
-		lblBackgroundEduc.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBackgroundEduc.setBounds(0, 0, 700, 700);
-		Educ.add(lblBackgroundEduc);
+		
+	//BACKGROUND
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\EDUCNOTEXT[1].png"));
+		lblBackground.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBackground.setBounds(0, 0, 700, 700);
+		Educ.add(lblBackground);
 	}
 }
