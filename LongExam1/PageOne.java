@@ -45,6 +45,7 @@ public class PageOne extends JFrame {
 
 		setContentPane(PageOne);
 		PageOne.setLayout(null);
+	
 	//ABOUT ME BUTTON
 		JButton btnAboutMe = new JButton("ABOUT ME");
 		btnAboutMe.setFont(new Font("Bell MT", Font.BOLD, 13));
@@ -57,6 +58,7 @@ public class PageOne extends JFrame {
 		});
 		btnAboutMe.setBounds(170, 555, 120, 61);
 		PageOne.add(btnAboutMe);
+	
 	//INTERESTS BUTTON
 		JButton btnInterests = new JButton("INTERESTS");
 		btnInterests.setFont(new Font("Bell MT", Font.BOLD, 13));
@@ -69,6 +71,7 @@ public class PageOne extends JFrame {
 		});
 		btnInterests.setBounds(561, 555, 120, 61);
 		PageOne.add(btnInterests);
+	
 	//EDUC BUTTON
 		JButton btnEduc = new JButton("EDUCATION");
 		btnEduc.setFont(new Font("Bell MT", Font.BOLD, 13));
@@ -94,9 +97,10 @@ public class PageOne extends JFrame {
 		btnSkills.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnSkills.setBounds(300, 555, 120, 61);
 		PageOne.add(btnSkills);
-	//BACKGROUND	
+		
+	//BACKGROUND
 		JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\TITLE_PAGE[1].png"));
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\TITLE_PAGE[1].png"));
 		lblBackground.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBackground.setBounds(0, 0, 700, 700);
 		PageOne.add(lblBackground);
