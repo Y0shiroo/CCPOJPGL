@@ -64,7 +64,8 @@ public class Skills extends JFrame {
 		contentPane.add(Skillspanel);
 		Skillspanel.setLayout(null);
 		Skillspanel.setVisible(false);
-		
+	
+	//LABELS FOR PICTURES AND OTHER INFORMATION	
 		JLabel lblProgLang = new JLabel("Programming Language:");
 		lblProgLang.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblProgLang.setBounds(26, 21, 150, 25);
@@ -135,9 +136,10 @@ public class Skills extends JFrame {
 		btnShowSkills.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnShowSkills.setBounds(286, 10, 202, 40);
 		contentPane.add(btnShowSkills);
-	//BACKGROUND	
+		
+	//BACKGROUND
 		JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\KO42U40N\\SKILLSET_(1)[1].png"));
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTS2GFU9\\SKILLSET_(1)[1].png"));
 		lblBackground.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBackground.setBounds(0, 0, 700, 700);
 		contentPane.add(lblBackground);
