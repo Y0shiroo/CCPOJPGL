@@ -80,7 +80,8 @@ public class AboutMe extends JFrame {
 		AboutMe.add(InfoPanel);
 		InfoPanel.setLayout(null);
 		InfoPanel.setVisible(false);
-		
+	
+	//LABELS FOR PICTURES AND OTHER INFORMATION
 		JLabel lblName = new JLabel("NAME: MARC ANDREI J CADIZ");
 		lblName.setFont(new Font("Times New Roman", Font.BOLD, 10));
 		lblName.setBounds(39, 10, 160, 55);
@@ -110,15 +111,16 @@ public class AboutMe extends JFrame {
 		btnWhoAmI.setFont(new Font("Bell MT", Font.BOLD, 13));
 		btnWhoAmI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InfoPanel.show();
+				InfoPanel.setVisible(true);
 				lbl1x1.setVisible(true);
 			}
 		});
 		btnWhoAmI.setBounds(262, 28, 125, 40);
 		AboutMe.add(btnWhoAmI);
-	//BACKGROUND	
+	
+	//BACKGROUND
 		JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\MA8P80D4\\P.INFO_(2)[1].png"));
+		lblBackground.setIcon(new ImageIcon("C:\\Users\\Marc Cadiz\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\HTXLNMF0\\P.INFO_(2)[1].png"));
 		lblBackground.setBounds(0, 0, 700, 700);
 		lblBackground.setVisible(true);
 		AboutMe.add(lblBackground);
